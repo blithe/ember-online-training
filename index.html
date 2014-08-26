@@ -15,9 +15,13 @@
     <script src="tests/load-tests.js"></script>
   </head>
   <body>
-    <script type="text/x-handlebars">
+    <script type="text/x-handlebars" data-template-name="application">
       <header><h1>BümBöx</h1></header>
 
+      {{outlet}}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="index">
       <div class="album-list">
 
         {{#each}}
@@ -33,6 +37,11 @@
             </p>
           </div>
         {{/each}}
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="album">
+      <div class="album-info">
       </div>
     </script>
 
