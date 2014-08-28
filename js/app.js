@@ -19,4 +19,15 @@ App.AlbumRoute = Ember.Route.extend({
   }
 });
 
+Ember.Handlebars.helper('format-duration', function(value) {
+  var minutes = Math.floor(value/60),
+      seconds = value%60;
+
+    if (seconds < 10) {
+      seconds = "0" + seconds
+    };
+
+  return minutes + ":" + seconds;
+});
+
 })();
