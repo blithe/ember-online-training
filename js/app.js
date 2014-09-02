@@ -30,8 +30,8 @@ Ember.Handlebars.helper('format-duration', function(value) {
   return minutes + ":" + seconds;
 });
 
-App.Album = Ember.Object.extend({});
+App.Album = Ember.Object.extend();
 
-App.Song = Ember.Object.extend({});
+App.Song = Ember.Object.extend();
 
 })();
