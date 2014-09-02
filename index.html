@@ -19,6 +19,7 @@
       <header><h1>BümBöx</h1></header>
 
       {{outlet}}
+      {{render "nowPlaying"}}
     </script>
 
     <script type="text/x-handlebars" data-template-name="index">
@@ -63,6 +64,10 @@
             <td class="total-duration" colspan="3">Total Time: {{format-duration totalDuration}}</td>
           </tr>
       </table>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="nowPlaying">
+      <footer class="now-playing"></footer>
     </script>
 
     <div id="qunit" style="display: none"></div>
