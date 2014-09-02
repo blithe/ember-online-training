@@ -50,18 +50,18 @@
       </div>
 
       <table class="album-listing">
-        {{#each songs}}
+        {{#each song in songs}}
           <tr>
             <td class="song-track">
-              <span class="track-number">{{track}}</span>
+              <span class="track-number">{{song.track}}</span>
             </td>
-            <td class="song-name">{{name}}</td>
-            <td class="song-duration">{{format-duration duration}}</td>
+            <td class="song-name">{{song.name}}</td>
+            <td class="song-duration">{{format-duration song.duration}}</td>
           </tr>
+        {{/each}}
           <tr>
             <td class="total-duration" colspan="3">Total Time: 40:03</td>
           </tr>
-        {{/each}}
       </table>
     </script>
 
