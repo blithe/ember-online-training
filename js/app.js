@@ -30,7 +30,13 @@ Ember.Handlebars.helper('format-duration', function(value) {
   return minutes + ":" + seconds;
 });
 
-App.Album = Ember.Object.extend();
+App.Album = Ember.Object.extend({
+  totalDuration: function() {
+    return this.get('songs').reduce(function(sum, record) {
+      return sum + record.duration;
+    }, 0);
+  }.property('songs.@each.duration')
+});
 
 App.Song = Ember.Object.extend();
 
