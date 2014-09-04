@@ -19,6 +19,8 @@ App.AlbumRoute = Ember.Route.extend({
   }
 });
 
+App.NowPlayingController = Ember.ObjectController.extend();
+
 Ember.Handlebars.helper('format-duration', function(value) {
   var minutes = Math.floor(value/60),
       seconds = value%60;
