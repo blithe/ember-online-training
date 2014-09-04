@@ -14,6 +14,12 @@ App.IndexRoute = Ember.Route.extend({
 });
 
 App.AlbumRoute = Ember.Route.extend({
+  events: {
+    play: function(song) {
+      setControllerModel('nowPlaying', song);
+    }
+  },
+
   model: function(params) {
     return App.ALBUM_FIXTURES.findProperty('id', params.album_id);
   }
