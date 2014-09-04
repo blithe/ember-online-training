@@ -10,7 +10,7 @@ App.Router.map(function() {
 App.ApplicationRoute = Ember.Route.extend({
   events: {
     play: function(song) {
-      setControllerModel('nowPlaying', song);
+      this.controllerFor('nowPlaying').set('model', song);
     }
   }
 });
