@@ -40,6 +40,8 @@ Ember.Handlebars.helper('format-duration', function(value) {
   return minutes + ":" + seconds;
 });
 
+App.AudioPlayerComponent = Ember.Component.extend();
+
 App.Album = Ember.Object.extend({
   totalDuration: function() {
     return this.get('songs').reduce(function(sum, record) {
