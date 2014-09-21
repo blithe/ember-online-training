@@ -40,7 +40,31 @@ Ember.Handlebars.helper('format-duration', function(value) {
   return minutes + ":" + seconds;
 });
 
-App.AudioPlayerComponent = Ember.Component.extend();
+App.AudioPlayerComponent = Ember.Component.extend({
+  classNames: "audio-control",
+  currentTime: 0,
+  duration: null,
+  isLoaded: false,
+  isPlaying: false,
+
+  didInsertElement: function() {
+    var component = this;
+    this.$('audio')
+      .on('loadeddata', function() {
+        component.set("isLoaded", true);
+        component.set("duration", Math.floor(this.duration));
+      })
+      .on('timeupdate', function() {
+        component.set("currentTime", Math.floor(this.currentTime));
+      })
+      .on('play', function() {
+        component.set("isPlaying", true);
+      })
+      .on('pause', function() {
+        component.set("isPlaying", false);
+      });
+  }
+});
 
 App.Album = Ember.Object.extend({
   totalDuration: function() {
