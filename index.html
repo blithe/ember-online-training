@@ -86,8 +86,13 @@
       </footer>
     </script>
 
-    <script type="text/x-handlebars" data-template-name="components/audio-player">
+    <script type="text/x-handlebars" data-template-name="components/audio-player" play="playSong" pause="pauseSong">
       <audio {{bindAttr src=src}} autoplay></audio>
+      {{#if isPlaying}}
+        <button class="pause" {{action "pauseSong"}}>❙❙</button>
+      {{else}}
+        <button class="play" {{action "playSong"}}>▶</button>
+      {{/if}}
     </script>
 
     <div id="qunit" style="display: none"></div>

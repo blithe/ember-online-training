@@ -63,6 +63,13 @@ App.AudioPlayerComponent = Ember.Component.extend({
       .on('pause', function() {
         component.set("isPlaying", false);
       });
+  },
+  playSong: function() {
+    this.$('audio')[0].play();
+  },
+
+  pauseSong: function() {
+    this.$('audio')[0].pause();
   }
 });
 
